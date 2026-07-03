@@ -72,6 +72,10 @@ if config.LOG_CHAT:
 else:
     SUNAME = config.SUPPORT_CHAT.split("me/")[1]
 
+print("LOG_CHAT =", config.LOG_CHAT)
+print("SUNAME =", SUNAME)
+
+
 async def fallen_startup():
     os.system("clear")
     LOGGER.info(
