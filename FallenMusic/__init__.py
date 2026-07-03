@@ -59,6 +59,7 @@ app2 = Client(
 pytgcalls = PyTgCalls(app2)
 
 SUDOERS = filters.user()
+
 if config.LOG_CHAT:
     try:
         SUNAME = int(config.LOG_CHAT)
@@ -70,9 +71,6 @@ if config.LOG_CHAT:
         )
 else:
     SUNAME = config.SUPPORT_CHAT.split("me/")[1]
-
-LOGGER.info(f"LOG_CHAT = {config.LOG_CHAT}")
-LOGGER.info(f"SUNAME = {SUNAME}")
 
 async def fallen_startup():
     os.system("clear")
