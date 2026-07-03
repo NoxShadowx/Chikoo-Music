@@ -23,6 +23,8 @@
 import asyncio
 import importlib
 import os
+from threading import Thread
+from FallenMusic.web import run
 
 from pyrogram import idle
 
@@ -86,6 +88,8 @@ async def fallen_startup():
     await pytgcalls.start()
     await idle()
 
+
+Thread(target=run, daemon=True).start()
 
 if __name__ == "__main__":
     asyncio.get_event_loop().run_until_complete(fallen_startup())
