@@ -20,6 +20,7 @@ SESSION = getenv("SESSION", None)
 
 SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/Music_Brigade_Chatting_zone")
 SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/BrokenXworld")
+LOG_CHAT = getenv("LOG_CHAT", "-1003854544060")
 
 SUDO_USERS = list(map(int, getenv("SUDO_USERS", "8455806295").split()))
 
