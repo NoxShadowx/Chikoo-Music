@@ -59,8 +59,17 @@ app2 = Client(
 pytgcalls = PyTgCalls(app2)
 
 SUDOERS = filters.user()
-SUNAME = config.SUPPORT_CHAT.split("me/")[1]
-
+if config.LOG_CHAT:
+    try:
+        SUNAME = int(config.LOG_CHAT)
+    except ValueError:
+        SUNAME = (
+            config.LOG_CHAT.replace("https://t.me/", "")
+            .replace("https://telegram.me/", "")
+            .replace("@", "")
+        )
+else:
+    SUNAME = config.SUPPORT_CHAT.split("me/")[1]
 
 async def fallen_startup():
     os.system("clear")
@@ -92,8 +101,8 @@ async def fallen_startup():
     ASS_USERNAME = getme2.username
     ASS_MENTION = getme2.mention
     try:
-        await app2.join_chat("DevilsHeavenMF")
-        await app2.join_chat("FallenAssociation")
+        await app2.join_chat("BrokenXworld")
+        await app2.join_chat("Music_Brigade_Chatting_zone")
     except:
         pass
 
